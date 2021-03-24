@@ -1,0 +1,100 @@
+<!DOCemailExample html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Animation</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box">
+        <label for="email-id">Email</label>
+        <input emailExample="email" id="email-id" />
+      </div>
+    </div>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        background-image: linear-gradient(
+          to left top,
+          #101e3d,
+          #005582,
+          #00929a,
+          #00cb75,
+          #d1f623
+        );
+      }
+
+      .wrapper {
+        width: 350px;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+      }
+
+      .box {
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 50px 30px;
+        position: relative;
+        border-radius: 20px;
+        background-color: #b2ffd044;
+        box-shadow: 0 0 20px #747480ad;
+      }
+
+      label {
+        margin-bottom: 15px;
+        position: relative;
+        display: block;
+        font-family: "Roboto", sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        color: #00043b;
+      }
+
+      input {
+        width: 100%;
+        padding: 15px 0;
+        position: relative;
+        font-family: "Roboto", sans-serif;
+        font-size: 25px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        outline: none;
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid #c4b5c75b;
+      }
+    </style>
+    <script>
+      let placeholder = "";
+      let i = 0;
+      const txt = "example@gmail.com";
+      const textSpeed = 100;
+      function emailExample() {
+        placeholder += txt.charAt(i);
+        document
+          .getElementById("email-id")
+          .setAttribute("placeholder", placeholder);
+        i++;
+        setTimeout(emailExample, textSpeed);
+      }
+      emailExample();
+    </script>
+  </body>
+</html>
